@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form() {
+function Form({ addColor }) {
   // setup color state value
   const [color, setColor] = useState("");
 
@@ -12,6 +12,7 @@ function Form() {
   // Submit Function
   function handleSubmit(e) {
     e.preventDefault();
+    addColor(color);
   }
 
   return (

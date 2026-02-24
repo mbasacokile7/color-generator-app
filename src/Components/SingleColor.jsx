@@ -1,14 +1,15 @@
-function SingleColor({ color }) {
-  const backgroundColor = color.hex;
+function SingleColor({ color, index }) {
+  const { hex, weight } = color;
+
   return (
     <article
-      className="color false"
+      className={index > 10 ? "color color-light" : "color"}
       style={{
-        background: `#${backgroundColor}`,
+        background: `#${hex}`,
       }}
     >
-      <p className="percent-value">{color.weight}%</p>
-      <p className="color-value">#{color.hex}</p>
+      <p className="percent-value">{weight}%</p>
+      <p className="color-value">#{hex}</p>
     </article>
   );
 }
